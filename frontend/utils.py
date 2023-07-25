@@ -19,7 +19,8 @@ async def get_images(prompt: str, files: list = None):
     with st.chat_message("user"):
         st.write(prompt)
     with st.spinner():
-        async with CodeInterpreterSession(model='gpt-3.5-turbo') as session:
+        openai_api_key = st.secrets["general"]["OPENAI_API_KEY"]
+        async with CodeInterpreterSession(model='gpt-4') as session:
             response = await session.generate_response(
                 prompt,
                 files=files
