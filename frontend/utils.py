@@ -20,7 +20,7 @@ async def get_images(prompt: str, files: list = None):
         st.write(prompt)
     with st.spinner():
         openai_api_key = st.secrets["general"]["OPENAI_API_KEY"]
-        async with CodeInterpreterSession(model='gpt-4') as session:
+        async with CodeInterpreterSession(openai_api_key=openai_api_key,model='gpt-4') as session:
             response = await session.generate_response(
                 prompt,
                 files=files
