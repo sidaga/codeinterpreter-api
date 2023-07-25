@@ -13,7 +13,8 @@ st.title('Code Interpreter API 🚀')
 # This will create a sidebar
 st.sidebar.title("Code Interpreter API 🚀")
 st.sidebar.markdown("[Github Repo](https://github.com/shroominic/codeinterpreter-api)")
-
+# Debug line to print the API key
+st.write("OpenAI API Key:", st.secrets["general"]["OPENAI_API_KEY"])
 
 # This will create a textbox where you can input text
 input_text = st.text_area("Write your prompt")
